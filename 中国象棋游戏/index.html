@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/zzsc.css">
+</head>
+<body style="background: url(&quot;img/stype_1/bg.jpg&quot;);">
+	<div class="box" id="box" style="width: 455px;">
+		<div class="chess_left">
+			<canvas id="chess" width="325" height="402"><h1>对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！</h1></canvas>
+			<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+			<!--<audio src="audio/check.wav" id="checkAudio" preload="auto"></audio>-->
+			<audio src="audio/select.wav" id="selectAudio" preload="auto"></audio>
+			<div>
+				<div class="bn_box" id="bnBox" style="display: block;">
+					<input type="button" name="offensivePlay" id="tyroPlay" value="新手水平">
+					<input type="button" name="offensivePlay" id="superPlay" value="中级水平">
+					<input type="button" name="button" id="" value="大师水平" disabled="">
+					<!--
+				<input type="button" name="offensivePlay" id="offensivePlay" value="先手开始" />
+				<input type="button" name="defensivePlay" id="defensivePlay" value="后手开始" />
+				-->
+					<input type="button" name="regret" id="regretBn" value="悔棋">
+					<input type="button" name="billBn" id="billBn" value="棋谱" class="bn_box">
+					<input type="button" name="stypeBn" id="stypeBn" value="换肤">
+				</div>
+			</div>
+		</div>
+		<div class="chess_right" id="chessRight" style="display: none;">
+			<select name="billList" id="billList">
+			</select>
+			<ol id="billBox" class="bill_box">
+			</ol>
+		</div>
+		<div id="moveInfo" class="move_info" style="display: block;"></div>
+	</div>
+	
+	<p class="tricksButtons" style="padding-top:30px">
+		<a href="http://www.html5tricks.com/html5-zgxq.html" target="_blank" class="demo">下载源码</a>
+	</p>
+	
+	<script type="text/javascript" src="./js/common.js"></script> 
+	<script type="text/javascript" src="./js/play.js"></script> 
+	<script type="text/javascript" src="./js/AI.js"></script> 
+	<script type="text/javascript" src="./js/bill.js"></script> 
+	<script type="text/javascript" src="./js/gambit.js"></script>
+	
+	<div class="v_share" style="width:700px;margin:5px auto;padding:0 0 0 380px;overflow:hidden">
+	<!-- Baidu Button BEGIN -->
+		<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" style="margin:10px 0 0 -4px">
+			<a class="bds_tsina"></a>
+			<a class="bds_tqq"></a>
+			<a class="bds_renren"></a>
+			<a class="bds_qzone"></a>
+			<a class="bds_douban"></a>
+			<a class="bds_xg"></a>
+			<span class="bds_more">更多</span>
+			<a class="shareCount"></a>
+		</div>
+	<!-- <script type="text/javascript" id="bdshare_js" data="type=tools"></script> -->
+	<!-- <script type="text/javascript" id="bdshell_js" src="http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=22"></script> -->
+	<script type="text/javascript">
+		// document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours
+	// ();
+	</script>
+	<!-- Baidu Button END -->
+	</div>
+	<script type="text/javascript">
+	abc();
+	</script>
+	
+	<!-- <div style="display:none"><script language="javascript" type="text/javascript" src="//js.users.51.la/16741667.js"></script><a href="https://www.51.la/?comId=16741667" title="51.La 网站流量统计系统" target="_blank"><span style="display:inline-block;background-color:#EF5350;color:#fff;padding:2px 5px;font-family:arial;font-size:12px;font-weight:bold;">51La</span></a></div> -->
+	<!-- <div style="display:none"><script language="javascript" type="text/javascript" src="//js.users.51.la/17278758.js"></script><a href="https://www.51.la/?comId=17278758" title="51.La 网站流量统计系统" target="_blank"><span style="display:inline-block;background-color:#EF5350;color:#fff;padding:2px 5px;font-family:arial;font-size:12px;font-weight:bold;">51La</span></a></div> -->
+	
+	
+	</body>
+</html>

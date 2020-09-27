@@ -1,0 +1,73 @@
+<html
+    class=" -webkit- js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"
+    >
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Preview Panel</title>
+    <script src="/libs/prefixfree.min.js"></script>
+    <script src="/libs/modernizr.js"></script>
+    <style>
+        body {
+            background: linear-gradient(-35deg, #2aa4d5, #030633);
+            min-height: 100vh;
+        }
+
+        div {
+            width: 370px;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 0 150px #031f40;
+            margin: 1em auto;
+            margin: calc(50vh - 250px) auto;
+        }
+
+        svg {
+            background: #031f40;
+            position: relative;
+            left: -20px;
+        }
+    </style>
+    <script src="//wow.techbrood.com/libs/jquery/jquery-2.1.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <svg width="400" height="500" viewBox="0 0 600 750">
+            <filter id="displacementFilter">
+                <feTurbulence type="turbulence" baseFrequency="0.010139173100960056 0.10495134034370786" numOctaves="1"
+                    result="turbulence" seed="53"></feTurbulence>
+                <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="50" xChannelSelector="R"
+                    yChannelSelector="B"></feDisplacementMap>
+            </filter>
+            <image id="blueMoon" xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="./moon.jpg" width="600"
+                height="400"></image>
+            <use xlink:href="#blueMoon" x="-10" transform="translate(0, 800) scale(1 -1) "
+                filter="url(#displacementFilter)"></use>
+        </svg>
+        <div>
+            <script>
+                var img = document.querySelector("#displacementFilter feTurbulence");
+                var frames = 0;
+                var rad = Math.PI / 180;
+
+                function AnimateBaseFrequency() {
+                    var bf = "0.01 .1";
+                    bfx = Number(bf.split(" ")[0]);
+                    bfy = Number(bf.split(" ")[1]);
+                    frames += .5
+                    bfx += 0.001 * Math.cos(frames * rad);
+                    bfy += 0.005 * Math.sin(frames * rad);
+
+                    bf = bfx.toString() + ' ' + bfy.toString();
+                    img.setAttributeNS(null, 'baseFrequency', bf);
+
+                    window.requestAnimationFrame(AnimateBaseFrequency);
+                }
+
+                window.requestAnimationFrame(AnimateBaseFrequency);</script>
+        </div>
+    </div>
+</body>
+
+</html>
