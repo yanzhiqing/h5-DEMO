@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <!-- saved from url=(0083)https://www.17sucai.com/preview/1/2015-12-10/%E6%B5%81%E7%A8%8B%E5%9B%BE/index.html -->
-<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="zh">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>jQuery可生成循环流程图表特效</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery可生成循环流程图表特效</title>
 
-<link rel="stylesheet" type="text/css" href="./jQuery可生成循环流程图表特效_files/default.css">
-<link href="./jQuery可生成循环流程图表特效_files/style.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./jQuery可生成循环流程图表特效_files/default.css"
+    />
+    <link
+      href="./jQuery可生成循环流程图表特效_files/style.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app" class="demo">
+			<ul>
+				<li v-for="(item,index) of file_list" :key="index">
+					<a :href="'./'+item">{{item}}</a>
+				</li>
+			</ul>
+		</div>
 
-</head>
-<body>
-<div class="contenedor">
-	<div class="ciclo1" style="width: 420px; height: 420px;"><div class="pointers arrow6" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 90.0006px; top: 38.7561px; transform: rotate(5.75959rad); color: rgb(64, 164, 192); text-align: center;">➡</div><div class="pointers arrow5" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 20px; top: 159.999px; transform: rotate(4.71239rad); color: rgb(64, 164, 192); text-align: center;">➡</div><div class="pointers arrow4" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 89.9994px; top: 281.243px; transform: rotate(3.66519rad); color: rgb(64, 164, 192); text-align: center;">➡</div><div class="pointers arrow3" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 229.999px; top: 281.244px; transform: rotate(2.61799rad); color: rgb(64, 164, 192); text-align: center;">➡</div><div class="pointers arrow2" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 300px; top: 160.001px; transform: rotate(1.5708rad); color: rgb(64, 164, 192); text-align: center;">➡</div><div class="pointers arrow1" style="font-size: 60px; width: 100px; height: 100px; position: absolute; left: 230.001px; top: 38.7568px; transform: rotate(0.523599rad); color: rgb(64, 164, 192); text-align: center;">➡</div>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 160px; top: 0px;">A</a>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 298.564px; top: 80px;">B</a>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 298.564px; top: 240px;">C</a>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 160px; top: 320px;">D</a>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 21.4359px; top: 240px;">E</a>
-		<a class="sc_object" style="width: 100px; height: 100px; position: absolute; border-radius: 50%; text-align: center; font-size: 20px; background: center center no-repeat rgb(146, 143, 162); line-height: 100px; left: 21.4359px; top: 80px;">F</a>
-		<a class="sc_center" style="width: 100px; height: 100px; background: center center no-repeat rgb(146, 143, 162); position: absolute; text-align: center; font-size: 20px; border-radius: 50%; line-height: 100px; left: 160px; top: 160px; display: block;">center</a>
-	</div>
-</div>
-<div class="btn add">Add</div>
+    <script>
+      const App = {
+        data() {
+          return {
+            message: "Hello Vue!!",
+            file_list: [
+              "3D frozen snowflakes",
+              "Canvas butterfly dancing animation",
+              "Canvas colorful glow fountain animation",
+              "Canvas Flame follows mouse animation",
+              "Canvas is a cool 3D fireworks animation",
+              "Canvas is a copy of Windows drawing tool",
+              "Canvas mist flame animation",
+              "Canvas push box mini game",
+              "Canvas text radial line animation",
+              "Canvas waterfall falls onto the lake",
+              "CSS3 3D rotating box animation allows you to customize the cover image",
+              "CSS3 drawer open and close animation",
+              "CSS3 Wind speed switching scene animation",
+              "CSS33D Rubik's Cube animation",
+              "Echarts数据管理图表界面 多种图表使用示例",
+              "getFilesNames.js",
+              "index.html",
+              "jQuery前端验证码插件",
+              "jQuery卷轴展开动画",
+              "jQuery可生成循环流程图表特效",
+              "jQuery可生成循环流程图表特效_files",
+              "jQuery圆盘时钟动画",
+              "README.md",
+              "SVG唐老鸭",
+              "The 16 - court card elimination game",
+              "UP2017腾讯互动娱乐年度发布会",
+              "_config.yml",
+              "中国象棋游戏",
+              "像素粉碎图片动画 图片洒落一地",
+              "冒泡排序动画",
+              "冰墩墩",
+              "吃豆人",
+              "基于Flexbox的响应式蜂巢样式布局",
+              "家和万事兴",
+              "水果忍者",
+              "水滴掉落",
+              "水面倒影和波纹动画",
+              "消消乐",
+              "神奇宝贝小动物",
+              "纯CSS3卡通火车沿轨道行驶动画",
+              "纯CSS3实现的蒙娜丽莎画像",
+              "纯CSS3无穷级楼梯台阶动画",
+              "纯CSS3花瓣样式的Loading加载动画",
+              "镜中月",
+            ],
+          };
+        },
+      };
 
-<script type="text/javascript" src="./jQuery可生成循环流程图表特效_files/jquery-2.1.1.min.js.下载"></script>
-<script type="text/javascript" src="./jQuery可生成循环流程图表特效_files/smartCycle.min.js.下载"></script>
-<script>
- var radio = 160;
- var radio_arrows =140;
- var container_width = 420, container_height=420;
- var c_container_width = 420, c_container_height=420;
-
-
-$(".ciclo1").smartCycle({
-	container_width: '420px',
-	container_height: '420px',
-	radio: radio,
-	radio_arrows: radio_arrows,
-	arrows_colors:['#40A4C0'],
-	colors:['#928fa2','#928fa2']
-});
-
-var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var alphabet_pos =6;
-
-
-$(".add").click(function(){
-	$(".ciclo1").append('<a class="sc_object">'+alphabet[alphabet_pos]+'</a>');  
-
-	radio+=25;
-	radio_arrows+=25;
-	container_width+=50;
-	container_height+=50;
-
-	c_container_width+=50;
-	c_container_height+=50;
-
-	$(".contenedor").css({
-		'width':c_container_width+'px',
-		'height':c_container_height+'px'
-	});
-
-	$(".ciclo1").smartCycle('options',{'radio': radio, 'radio_arrows': radio_arrows, 'container_width': container_width+'px',
-	'container_height': container_height+'px',});
-
-	
-
-	$(".ciclo1").smartCycle('realign');
-
-	alphabet_pos+=1;
-
-});
-
-</script>
-
-
-
-</body></html>
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
