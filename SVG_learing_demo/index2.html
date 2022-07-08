@@ -335,7 +335,7 @@
       <defs>
         <path
           id="border-box-1"
-          d="M200,200 A200,200 0 0,1 400,400"
+          d="M0,0 A200,200 0 0,1 200,200 A200,200 0 0,0 400,400"
           fill="transparent"
         ></path>
         <radialGradient
@@ -356,7 +356,36 @@
           >
             <animateMotion
               dur="3s"
-              path="M200,200 A200,200 0 0,1 400,400"
+              path="M0,0 A200,200 0 0,1 200,200 A200,200 0 0,0 400,400"
+              rotate="auto"
+              repeatCount="indefinite"
+            ></animateMotion>
+          </circle>
+        </mask>
+        <path
+          id="border-box-2"
+          d="M200,200 A200,200 0 0,0 400,400"
+          fill="transparent"
+        ></path>
+        <radialGradient
+          id="border-box-2-gradient"
+          cx="50%"
+          cy="50%"
+          r="50%"
+        >
+          <stop offset="0%" stop-color="#fff" stop-opacity="1"></stop>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+        </radialGradient>
+        <mask id="border-box-2-mask">
+          <circle
+            cx="0"
+            cy="0"
+            r="40"
+            fill="url(#border-box-2-gradient)"
+          >
+            <animateMotion
+              dur="3s"
+              path="M200,200 A200,200 0 0,0 400,400"
               rotate="auto"
               repeatCount="indefinite"
             ></animateMotion>
