@@ -170,6 +170,7 @@
         fill="transparent"
       />
     </svg>
+    <h1>动态svg一</h1>
     <div style="background: #000">
       <svg width="680" height="240" class="dv-border-svg-container">
         <defs>
@@ -328,6 +329,7 @@
         </circle>
       </svg>
     </div>
+    <h1>动态svg二</h1>
     <svg
       width="400"
       height="400"
@@ -339,54 +341,20 @@
           d="M0,0 A200,200 0 0,1 200,200 A200,200 0 0,0 400,400"
           fill="transparent"
         ></path>
-        <radialGradient
-          id="border-box-1-gradient"
-          cx="50%"
-          cy="50%"
-          r="50%"
-        >
-          <stop offset="0%" stop-color="#fff" stop-opacity="1"></stop>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
-        </radialGradient>
+        <linearGradient id="border-box-1-linear">
+          <stop offset="0%"  stop-color="#fff"  stop-opacity="0"/>
+          <stop offset="100%" stop-color="#fff"  stop-opacity="1"/>
+      </linearGradient>
         <mask id="border-box-1-mask">
           <circle
             cx="0"
             cy="0"
-            r="40"
-            fill="url(#border-box-1-gradient)"
+            r="50"
+            fill="url(#border-box-1-linear)"
           >
             <animateMotion
               dur="3s"
               path="M0,0 A200,200 0 0,1 200,200 A200,200 0 0,0 400,400"
-              rotate="auto"
-              repeatCount="indefinite"
-            ></animateMotion>
-          </circle>
-        </mask>
-        <path
-          id="border-box-2"
-          d="M200,200 A200,200 0 0,0 400,400"
-          fill="transparent"
-        ></path>
-        <radialGradient
-          id="border-box-2-gradient"
-          cx="50%"
-          cy="50%"
-          r="50%"
-        >
-          <stop offset="0%" stop-color="#fff" stop-opacity="1"></stop>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
-        </radialGradient>
-        <mask id="border-box-2-mask">
-          <circle
-            cx="0"
-            cy="0"
-            r="40"
-            fill="url(#border-box-2-gradient)"
-          >
-            <animateMotion
-              dur="3s"
-              path="M200,200 A200,200 0 0,0 400,400"
               rotate="auto"
               repeatCount="indefinite"
             ></animateMotion>
