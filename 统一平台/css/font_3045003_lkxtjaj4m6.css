@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3045003 */
+  src: url('../font/font_3045003_lkxtjaj4m6.woff2') format('woff2'),
+       url('../font/font_3045003_lkxtjaj4m6.woff') format('woff'),
+       url('../font/font_3045003_lkxtjaj4m6.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-liangchang:before {
+  content: "\e622";
+}
+
+.icon-lumianshigong:before {
+  content: "\e623";
+}
+
+.icon-shiyanjiance:before {
+  content: "\e624";
+}
+
+.icon-renyuanguanli:before {
+  content: "\e625";
+}
+
+.icon-tanpuyashifuwu:before {
+  content: "\e626";
+}
+
+.icon-shujufuwuzhongxin:before {
+  content: "\e627";
+}
+
+.icon-a-lujishigong2x:before {
+  content: "\e620";
+}
+
+.icon-GPS:before {
+  content: "\e621";
+}
+
