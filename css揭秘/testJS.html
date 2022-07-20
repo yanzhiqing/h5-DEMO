@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .staff_name_header::after {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 16px;
+      background: linear-gradient(to bottom, #333 50%, transparent 0);
+      background-size: 100% 4px;
+      clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+    .pyramid{
+      width: 500px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      background:
+       linear-gradient(to bottom, #cc7497 85%, transparent 95%,transparent 0) center 0%,
+       linear-gradient(to bottom, #182843 85%, transparent 95%,transparent 0) center 25%,
+       linear-gradient(to bottom, #2e6c8e 85%, transparent 95%,transparent 0) center 50%,
+       linear-gradient(to bottom, #0084a4 85%, transparent 95%,transparent 0) center 75%,
+       linear-gradient(to bottom, #018d9c 85%, transparent 95%,transparent 0) center 100%;
+        background-size: 100% 20%;
+        background-repeat: no-repeat;
+        clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+    }
+    .pyramid >div{
+      flex-basis: 25%;
+      text-align: center;
+      font-size: 20px;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href-"javascript:void(0)">这是一个死链接</a>
+    <div class="staff_name_header">
+      有图标
+    </div>
+    <div class="pyramid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </div>
+  <script>
+    // console.log(/^-\d+$/.test(2));
+    // let str="hellow";
+    // console.log(str.charAt(2));
+    // console.log(navigator.geolocation)
+    // let arr=["1","2","3"];
+    // [1,NaN,NaN]
+    // ["1","2","3"].map(parseInt)
+    // console.log([typeof null,null instanceof Object])
+    // console.log([[3,2,1].reduce(Math.pow),[3].reduce(Math.pow)]);
+    // [3,2,1].reduce((prev,item)=>{
+    //   Math.pow(prev,item)
+    // })
+
+    // var val='smtg';
+    // console.log('Value is '+ (val==='smtg')?'Something':Nothing)
+      
+    // var name='Word!';
+    // (function(){
+    //   if(typeof name==='undefined'){
+    //     var name='Jack';
+    //     console.log('Goodbye'+name)
+    //   }else{
+    //     console.log('Hellow'+name)
+    //   }
+    // })()
+  // var END=Math.pow(2,52);
+  // var Start=END - 100;
+  // var count=0;
+  // for(var i=Start;i<=END;i++){
+  //   count++
+  // }
+  // console.log(count)
+
+  // +
+  // ary.filter(x=>x===undefined)
+  // ary.forEach(item=>{
+  //   console.log(typeof item)
+  // })
+  // console.log(ary)
+
+  // var two=0.2;
+  // var one=0.1;
+  // var eight=0.8;
+  // var six=0.6;
+  // [two-one==one,eight-six==two]
+  // console.log([0.8-0.4,eight-six])
+  
+  // function showCase2(value){
+  //   switch(value){
+  //     case 'A':
+  //       console.log('Case A');
+  //       break;
+  //     case undefined:
+  //       console.log('undefined');
+  //       break;
+  //     default:
+  //       console.log("Do not know！")
+  //   }
+  // }
+  // showCase2('A')
+  // let appleNum="";
+  // for(let i=1;i<=5;i++){
+  //   appleNum % 5 == 1
+  // }
+
+  // function  kingMonkey(m,n){
+  //   let numArr=Array.from(new Array(n))
+  //   .map((item,index)=>index+1);
+  //   for(let i=1;i<numArr.length;i++){
+  //     if(i==m){
+
+  //     }
+  //   }
+  //   console.log(Array.from(new Set(["大","22","大",["大"]].flat())),["大","22","大",["大"]].flat())
+  // }
+  // kingMonkey(1,10)
+
+  // function isOdd(num){
+  //   return num % 2==1;
+  // }
+  // function isEven(num){
+  //   return num % 2==0;
+  // }
+   
+  // function isSane(num){
+  //   return isEven(num) || isOdd(num)
+  // }
+
+  // values=[7,4,"13",-9,Infinity];
+  // values.map(isSane)
+
+  // console.log(values.map(isSane),"3" % 2 ==1)
+  // parseInt(3,8)
+  // parseInt(3,2)
+  // parseInt(3,0)
+  // Array.isArray(Array.prototype)
+  // console.log(Array.isArray(Array.prototype))
+
+  // var a=[0];
+  // if([0]){
+  //   console.log(a==true);
+  // }else{
+  //   console.log("wut")
+  // }
+
+  // console.log(1 + - + + - + - + 1)
+
+  // function foo(str,a){
+  //       eval(str);
+  //       console.log(a,b);
+  //     }
+  //     var b=2;
+  //     foo("var b=3;",1)
+// {
+//   let a=2;
+
+//   console.log("****",a)
+// }
+// console.log(a)
+// {
+//   try{
+//     throw undefined;
+//   }catch(a){
+//     console.log("****",a)
+//   }
+// }
+
+
+// console.log(a)
+let user1 = {
+      name:"李四",
+      key:Symbol(),
+    }
+    let user2 = {
+      name:"李四",
+      key:Symbol(),
+    }
+    let grade = {
+      [user1.key]:{
+        "js":99,
+        "css":100
+      },
+      [user2.key]:{
+        "js":88,
+        "css":88,
+      }
+    }
+    // console.log(grade);
+    console.log(new Date(2022,3,25,14,20,50).toLocaleDateString().replace(/\//g,"-"))
+    console.log(new Date().toLocaleTimeString())
+    // ：Date.parse("May 23, 2019")
+    // 和Date.UTC()
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: pink;
+    }
+    .steamer{
+      font-size: 10px;
+      width: 30em;
+      height: 30em;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    .pot{
+      width: 16em;
+      height: 12em;
+      background-color: darkslateblue;
+      border-radius: 0.5em 0.5em 6.5em 6.5em;
+      border-right: 1.5em solid midnightblue;
+      position: relative;
+    }
+    .pot::before{
+      content: "";
+      position: absolute;
+      width: 27em;
+      height: 2.5em;
+      background-color: tomato;
+      border-radius: 1.25em;
+      left:-5em;
+      top: 2em;
+      z-index: -1;
+    }
+    .lid{
+      width: 17em;
+      height: 6em;
+      background-color: gold;
+      border-radius: 6em 6em 0 0;
+      border-radius: 1.5em solid goldenrod;
+      position:relative;
+      top: 0.5em;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <figure class="steamer">
+    <div class="lid"></div>
+    <div class="pot"></div>
+  </figure>
+</body>
+</html>

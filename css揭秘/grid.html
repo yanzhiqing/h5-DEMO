@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  .baseBox{
+      position: relative;
+      width: 200px;
+     height: 200px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <style>
+    #box-id{
+      width: 100px;
+      height: 100px;
+      background: aquamarine;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .vue-resizable-handle{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      bottom: 0;
+      right: 0;
+      background: url(data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjYiIGhlaWdodD0iNiI+PHBhdGggZD0iTTYgNkgwVjQuMmg0LjJWMEg2djZ6IiBvcGFjaXR5PSIuMzAyIi8+PC9zdmc+);
+      background-position: 100% 100%;
+      padding: 0 3px 3px 0;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      cursor: se-resize;
+      }
+  </style>
+  <h1>01. 超级居中：place-items: center</h1>
+  <div id="box-id" class="baseBox">
+    <span>我是文字</span>
+    <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id')"></span>
+  </div>
+  <h1>02. 解构煎饼式布局：flex:&lt; &gt; grow shrink baseWidth </h1>
+    <style>
+      .parent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 200px;
+        min-height: 100px;
+        background: aqua;
+      }
+      .child{
+        flex:0 1 150px;
+        height: 100px;
+        border: 1px solid #f00;
+        margin: 5px;
+      }
+    </style>
+    <div id="box-id2" class="baseBox parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id2')"></span>
+    </div>
+    <h1>03. 侧边栏布局：grid-template-columns: minmax(<min>, <max>) …)</h1>
+      <style>
+        #box-id3{
+          display: grid;
+          grid-template-columns: minmax(150px, 25%) 1fr;
+        }
+        .box-id3-child1{
+          background-color: bisque;
+        }
+        .box-id3-child2{
+          background-color: blueviolet;
+        }
+      </style>
+    <div id="box-id3" class="baseBox">
+      <div class="box-id3-child1">min 150px / max 25%</div>
+      <div class="box-id3-child2"></div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id3')"></span>
+    </div>
+    <h1>04.煎饼堆栈布局：grid-template-rows: auto 1fr auto</h1>
+      <style>
+        #box-id4{
+          display: grid;
+          grid-template-rows:auto 1fr auto;
+        }
+        .box-id4-child1{
+          background-color: yellowgreen;
+          padding: 10px;
+        }
+        .box-id4-child2{
+          background-color: palevioletred;
+        }
+        .box-id4-child3{
+          background-color: skyblue;
+          padding: 10px;
+        }
+      </style>
+    <div id="box-id4" class="baseBox">
+      <div class="box-id4-child1">header
+      </div>
+      <div class="box-id4-child2"></div>
+      <div class="box-id4-child3">footer</div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id4')"></span>
+    </div>
+    <h1>05. 经典圣杯布局：grid-template: auto 1fr auto / auto 1fr auto</h1>
+    <style>
+      #box-id5{
+        display: grid;
+        grid-template:auto 1fr auto / auto 1fr auto;
+      }
+      .box-id5-child1{
+        background-color: yellowgreen;
+        grid-column: 1/4;
+      }
+      .box-id5-child2{
+        background-color: palevioletred;
+      }
+      .box-id5-child3{
+        background-color: skyblue;
+      }
+      .box-id5-child4{
+        background-color: papayawhip;
+      }
+      .box-id5-child5{
+        background-color: chartreuse;
+      }
+    </style>
+    <div id="box-id5" class="baseBox">
+      <div class="box-id5-child1">header </div>
+      <div class="box-id5-child2">left sidebar</div>
+      <div class="box-id5-child3">main</div>
+      <div class="box-id5-child4">right sidebar</div>
+      <div class="box-id5-child6">footer</div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id5')"></span>
+    </div>
+    <h1>06. 12 跨网格：grid-template-columns: repeat(12, 1fr)</h1>
+    <style>
+      #box-id6{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .box-id6-child1{
+        background-color: yellowgreen;
+        grid-column: 1/ span 12;
+      }
+      .box-id6-child2{
+        background-color: palevioletred;
+        grid-column: 1/span 5;
+      }
+      .box-id6-child3{
+        background-color: skyblue;
+        grid-column: 6/13;
+      }
+      .box-id6-child4{
+        background-color: papayawhip;
+        grid-column: 1/8;
+      }
+      .box-id6-child5{
+        background-color: chartreuse;
+        grid-column: 8/13;
+      }
+    </style>
+    <div id="box-id6" class="baseBox">
+      <div class="box-id6-child1">header </div>
+      <div class="box-id6-child2">left sidebar</div>
+      <div class="box-id6-child3">main</div>
+      <div class="box-id6-child4">right sidebar</div>
+      <div class="box-id6-child5">footer</div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id6')"></span>
+    </div>
+
+    <h1>07. RAM (Repeat, Auto, MinMax): grid-template-columns(auto-fit, minmax(<base>, 1fr))</h1>
+    <style>
+      #box-id7{
+        display: grid;
+        /* grid-template-columns: repeat(12, 1fr); */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .box-id7-child1{
+        background-color: yellowgreen;
+      }
+      .box-id7-child2{
+        background-color: palevioletred;
+      }
+      .box-id7-child3{
+        background-color: skyblue;
+      }
+      .box-id7-child4{
+        background-color: papayawhip;
+      }
+      .box-id7-child5{
+        background-color: chocolate;
+      }
+    </style>
+    <div id="box-id7" class="baseBox">
+      <div class="box-id7-child1">header </div>
+      <div class="box-id7-child2">left sidebar</div>
+      <div class="box-id7-child3">main</div>
+      <div class="box-id7-child4">right sidebar</div>
+      <div class="box-id7-child5">footer</div>
+      <span class="vue-resizable-handle" onmousedown="handleDown(event,'box-id7')"></span>
+    </div>
+
+
+
+
+  <script>
+     function handleDown(edown,id){
+      var tuozhuaiNode = document.getElementById(id);
+      var xNum = edown.clientX - tuozhuaiNode.offsetWidth;
+      var yNum = edown.clientY - tuozhuaiNode.offsetHeight;
+      let body = document.documentElement;
+      body.onmouseup = function () {
+        body.onmousemove = null;
+      };
+      body.onmousemove = function (eMove) {
+        tuozhuaiNode.style.width = eMove.clientX - xNum + "px";
+        tuozhuaiNode.style.height = eMove.clientY - yNum + "px";
+      };
+    }
+  </script>
+</body>
+</html>

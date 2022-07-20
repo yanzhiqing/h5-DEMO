@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e2e2e2;
+    }
+
+    .container .loading {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #ffffff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container .loading .loading-mask {
+      width: 200%;
+      height: 200%;
+      position: absolute;
+      left: -50%;
+      top: 100%;
+      z-index: 1;
+      border-radius: 40%;
+      background-color: rgba(0, 191, 255, 0.8);
+      animation: rotato 10s linear 0s infinite;
+      transition: all 1s;
+    }
+
+    .container .loading .loading-mask::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      border-radius: 36%;
+      overflow: hidden;
+      animation: rotato 11s linear 0s infinite;
+      background-color: rgba(0, 191, 255, 0.6);
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      /* IE 9 */
+      -moz-transform: rotate(0deg);
+      /* Firefox */
+      -webkit-transform: rotate(0deg);
+      /* Safari 和 Chrome */
+      -o-transform: rotate(0deg);
+      /* Opera */
+    }
+
+    .container .loading .loading-mask::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      border-radius: 30%;
+      overflow: hidden;
+      animation: rotato 10s linear 0s infinite;
+      background-color: rgba(0, 191, 255, 0.4);
+      transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      /* IE 9 */
+      -moz-transform: rotate(45deg);
+      /* Firefox */
+      -webkit-transform: rotate(45deg);
+      /* Safari 和 Chrome */
+      -o-transform: rotate(45deg);
+      /* Opera */
+    }
+
+    .container .loading .loading-text {
+      position: relative;
+      z-index: 9;
+      font-size: 50px;
+      color: #f2f2f2;
+    }
+
+
+    @keyframes rotato {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+<body>
+  <div class="container">
+    <div class="loading">
+      <div id="loadingMask" class="loading-mask"></div>
+      <div id="loading" class="loading-text">0%</div>
+    </div>
+    <div class="loading">
+      <div id="loadingMask" class="loading-mask"></div>
+      <div id="loading" class="loading-text">0%</div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      var process = 0;
+
+      
+      setInterval(function () {
+        var mask = document.querySelector("#loadingMask")
+        var loadText = document.querySelector("#loading")
+
+        // console.log("********",process)
+        // process=20;
+        var top = 100 - process
+        mask.style.top = top + "%"
+
+        loadText.innerHTML = process + "%"
+
+        process = process >= 100 ? 0 : process + 1
+
+      }, 1000)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .note {
+        width: 400px;
+        height: 300px;
+        padding:2em;
+        margin: 50px auto;
+        position: relative;
+        background: #58a; 
+        background: linear-gradient(-150deg, transparent 1.5em, #58a 0);
+        border-radius: 0.5em;
+        overflow: hidden;
+      }
+      .note::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(
+            to left bottom,
+            transparent 50%,
+            rgba(0, 0, 0, 0.2) 0,
+            rgba(0, 0, 0, 0.4)
+          )
+          100% 0 no-repeat;
+        width: 1.73em;
+        height: 3em;
+        transform: translateY(-1.3em) rotate(-30deg);
+        transform-origin: bottom right;
+        border-bottom-left-radius: inherit;
+        box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="note">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad labore
+      adipisci alias recusandae corrupti libero rerum odit ipsum, atque placeat,
+      maiores quas eos, dolor ut voluptate voluptates tempora enim fugiat?
+    </div>
+  </body>
+</html>

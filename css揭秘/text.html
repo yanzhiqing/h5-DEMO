@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .text {
+      width: 200px;
+      line-height: 1.5em;
+      background: beige;
+      background-size: auto 3em;
+      background-origin: content-box;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2) 50%,
+          transparent 0);
+
+      font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
+    }
+
+    pre {
+      font-family: monospace;
+    }
+
+    pre {
+      display: block;
+      margin: 1em 0;
+      white-space: pre;
+      tab-size: 8;
+    }
+
+    .amp {
+      font-family: Baskerville, "Goudy Old Style",
+        Garamond, Palatino, serif;
+      font-style: italic;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <pre class="text">
+    &#xfb01
+    de&#xfb01;ne
+    
+    while (true) {
+      var d = new Date();
+      if (d.getDate() == 1 && d.getMonth == 3) {
+        alert("TROLOLOL");
+      }
+    }
+  </pre>
+  <div>
+    HTML <span class="amp">&amp;</span> CSS
+  </div>
+  <div>
+    <style>
+      .line {
+        color: #333;
+        text-decoration-color: red;
+        text-decoration-style: double;
+        text-decoration-skip-ink: auto;
+        text-underline-position: auto;
+        text-decoration-line: line-through;
+      }
+    </style>
+    <a href="javascript:void(0);" class="line">测试下划线absfgghjji</a>
+  </div>
+  <div style="height: 50px;"></div>
+  <style>
+    .text2 {
+      width: 200px;
+      background: hsl(210, 13%, 40%);
+      color: hsl(210, 13%, 75%);
+      text-shadow: 0 -1px 1px black;
+    }
+  </style>
+  <div class="text2">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam earum neque nihil accusantium impedit ea fugit
+    aperiam veniam corporis aut, illo obcaecati suscipit atque vero, facilis rerum perferendis ab porro?
+  </div>
+
+  <style>
+    h1 {
+      font: 500%/1 Rockwell, serif;
+      background: deeppink;
+      color: white;
+      display: block;
+      width: 200px;
+      height: 200px;
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+    }
+    h1 #css {
+      fill: currentColor;
+
+    }
+    h1 svg {
+      overflow: visible
+    }
+    h1 use {
+      stroke: black;
+      stroke-width: 6;
+      stroke-linejoin: round;
+    }
+  </style>
+  <h1>
+    <svg width="2em" height="1.2em">
+      <use xlink:href="#css" />
+      <text x="0" y="1.2em" id="css">CSS</text>
+    </svg>
+  </h1>
+
+
+  <style>
+    a {
+      background: #203;
+      color: white;
+      transition: 1s;
+      padding: 20px;
+      font-size: 36px;
+      font-weight: bolder;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: transparent;
+      text-shadow: 0 0 .1em white, 0 0 .3em white;
+    }
+  </style>
+  <a href="">DIzzy</a>
+
+
+  <style>
+    .text4 {
+      font-size: 36px;
+      font-weight: bolder;
+      padding: 20px;
+      background: #58a;
+      color: white;
+      text-shadow: 0 1px hsl(0, 0%, 85%),
+        0 2px hsl(0, 0%, 80%),
+        0 3px hsl(0, 0%, 75%),
+        0 4px hsl(0, 0%, 70%),
+        0 5px hsl(0, 0%, 65%),
+        0 5px 10px black;
+    }
+  </style>
+  <span class="text4">CSS3D</span>
+
+
+  <style>
+    .circular {
+      width: 100px;
+      height: 100px;
+      margin: 50px;
+      display: inline-block;
+    }
+
+    .circular path {
+      fill: none;
+    }
+
+    .circular svg {
+      display: block;
+      overflow: visible;
+    }
+  </style>
+  <!-- <div class="circular">
+    <svg viewBox="0 0 100 100">
+      <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+      <text>
+        <textPath xlink:href="#circle">
+          circular reasoning works because
+        </textPath>
+      </text>
+    </svg>
+  </div> -->
+  <span class="circular">
+    circular reasoning works because
+  </span>
+  <span class="circular">
+    circular 中文效果
+  </span>
+
+  <div style="height:50px ;"></div>
+
+  <style>
+    input[type="checkbox"]+label::before {
+      content: '\a0';
+      /* 不换行空格 */
+      display: inline-block;
+      vertical-align: .2em;
+      width: .8em;
+      height: .8em;
+      margin-right: .2em;
+      border-radius: .2em;
+      background: silver;
+      text-indent: .15em;
+      line-height: .65;
+    }
+
+    input[type="checkbox"]:checked+label::before {
+      content: '\2713';
+      background: yellowgreen;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    input[type="checkbox"]:focus+label::before {
+      box-shadow: 0 0 .1em .1em #58a;
+    }
+
+    input[type="checkbox"]:disabled+label::before {
+      background: gray;
+      box-shadow: none;
+      color: #555;
+    }
+  </style>
+  <div>
+    <input type="checkbox" id="awesome" disabled />
+    <label for="awesome">Awesome!</label>
+  </div>
+
+  <div style="height: 50px;"></div>
+
+  <style>
+    .text5 {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+      padding: 15px;
+      border: 1px solid silver;
+      overflow: auto;
+      background:
+        linear-gradient(white, hsla(0, 0%, 100%, 0)),
+        radial-gradient(at top, rgba(0, 0, 0, .2), transparent 70%),
+        linear-gradient(to top, white, hsla(0, 0%, 100%, 0)) bottom,
+        radial-gradient(at bottom, rgba(0, 0, 0, .2), transparent 70%) bottom;
+      background-repeat: no-repeat;
+      background-size: 100% 30px, 100% 15px, 100% 30px, 100% 15px;
+      background-attachment: local, scroll
+    }
+  </style>
+  <div class="text5">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit neque ab iure tempore sint dolorum aut quia! Atque,
+    reiciendis. Illo voluptates autem pariatur maxime. Tenetur commodi quia magni tempora odit?
+  </div>
+  <div class="text5">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit neque ab iure tempore sint dolorum aut quia! Atque,
+    reiciendis. Illo voluptates autem pariatur maxime. Tenetur commodi quia magni tempora odit?
+  </div>
+  <div class="text5">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit neque ab iure tempore sint dolorum aut quia! Atque,
+    reiciendis. Illo voluptates autem pariatur maxime. Tenetur commodi quia magni tempora odit?
+  </div>
+
+  <div style="height: 50px;"></div>
+
+  <style>
+    .image-slider {
+      position: relative;
+      display: inline-block;
+      width: 500px;
+      height: 280px;
+    }
+
+    .image-slider>div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+
+    .image-slider img {
+      display: block;
+      width: 500px;
+      user-select: none;
+    }
+
+    .image-slider input {
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 100%;
+      margin: 0;
+    }
+  </style>
+  <div class="image-slider">
+    <img src="./images/14.png" alt="Before" />
+    <img src="./images/14-2.png" alt="After" />
+  </div>
+  <div class="image-slider">
+    <img src="./images/14.png" alt="Before" />
+    <img src="./images/14-2.png" alt="After" />
+  </div>
+
+  <style>
+    figure {
+      padding: 10px;
+      border: 1px solid silver;
+      max-width: 300px;
+      max-width: min-content;
+    }
+  </style>
+  <h2>自适应内部环境</h2>
+  <div>
+    <p>Lorem ...</p>
+    <figure>
+      <img style="max-width:inherit" src="https://picsum.photos/400/300" />
+      <figcaption>
+        The great Sir Adam Catlace was named after
+        Countess Ada Lovelace, the first programmer.
+      </figcaption>
+    </figure>
+    <p>Lorem ...</p>
+  </div>
+
+</body>
+<script>
+  let arr2 = $('.image-slider');
+  $.each(arr2, (slider) => {
+    // 创建附加的div元素，并用它包住第一个图片元素
+    var div = document.createElement('div');
+    var img = arr2[slider].querySelector('img');
+    arr2[slider].insertBefore(div, img);
+    div.appendChild(img);
+    // 创建滑块
+    var range = document.createElement('input');
+    range.type = 'range';
+    range.oninput = function () {
+      div.style.width = this.value + '%';
+    };
+    arr2[slider].appendChild(range);
+  })
+
+
+  let arr = $(".circular");
+  $.each(arr, (el) => {
+    console.log(el)
+    var NS = "http://www.w3.org/2000/svg";
+    var xlinkNS = "http://www.w3.org/1999/xlink";
+    var svg = document.createElementNS(NS, "svg");
+    var circle = document.createElementNS(NS, "path");
+    var text = document.createElementNS(NS, "text");
+    var textPath = document.createElementNS(NS, "textPath");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    circle.setAttribute("d", "M0,50 a50,50 0 1,1 0,1z");
+    circle.setAttribute("id", "circle");
+    textPath.textContent = arr[el].textContent;
+    textPath.setAttributeNS(xlinkNS, "xlink:href", "#circle");
+    text.appendChild(textPath);
+    svg.appendChild(circle);
+    svg.appendChild(text);
+    arr[el].textContent = '';
+    arr[el].appendChild(svg);
+  })
+
+</script>
+
+</html>

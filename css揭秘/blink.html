@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    @keyframes blink-1 {
+      10% {
+        background: linear-gradient(to right, #ffc107 20%, transparent);
+      }
+
+      20% {
+        background: linear-gradient(to right, #ffc107 40%, transparent);
+      }
+
+      30% {
+        background: linear-gradient(to right, #ffc107 60%, transparent);
+      }
+
+      40% {
+        background: linear-gradient(to right, #ffc107 80%, transparent);
+      }
+
+      50% {
+        background: linear-gradient(to right, #ffc107 100%, transparent);
+      }
+    }
+
+    @keyframes blink-2 {
+      to {
+        background: linear-gradient(to right, gold 100%, transparent);
+      }
+    }
+
+    p {
+      padding: 1em;
+      background: linear-gradient(to right, gold 0%, transparent);
+    }
+
+    .blink-smooth-1 {
+      animation: 1s blink-1 3;
+    }
+
+    .blink-smooth-2 {
+      animation: 1s blink-2 6;
+      animation-direction: alternate;
+    }
+
+    .blink {
+      animation: 1s blink-1 3 steps(10);
+    }
+  </style>
+
+  <div>
+    <p class="blink-smooth-1">Peek-a-boo!</p>
+    <p class="blink-smooth-2">Peek-a-boo!</p>
+    <p class="blink">Peek-a-boo!</p>
+  </div>
+
+
+  <style>
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+    @keyframes caret {
+      50% {
+        border-right-color: transparent;
+      }
+    }
+    h1 {
+      font: bold 200% Consolas, Monaco, monospace;
+      width: 15ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .05em solid;
+      animation: typing 8s steps(15),
+        caret 1s steps(1) infinite;
+    }
+  </style>
+  <h1>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique necessitatibus nihil, fugit reprehenderit sequi est nesciunt adipisci, alias cupiditate aspernatur labore asperiores nostrum animi voluptates enim. Nemo quae natus aliquid.
+  </h1>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue-03</title>
+    <!-- 引入Vue -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="container" style="margin-top: 12px;">
+        <div id="demo" class="row">
+            {{ say }}
+            <br />
+            <my-input :value.sync="say"></my-input>
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                say: "123"
+            },
+            components: {
+                "my-input": {
+                    props: ['value'],
+                    template: "<div><input v-bind:value='value' v-on:input='change1' />{{value}}</div>",
+                    watch: {
+                        value: function(newValue, oldValue) {
+                            alert('子组件value新旧值' + newValue + '/' + oldValue);
+                            //this.$emit('update:value', newValue)
+                        }
+
+                    },
+                    methods: {
+                        change1: function(e) {
+                            var v = e.target.value
+                            this.$emit('update:value', v)
+                        },
+
+                    }
+                }
+            },
+            watch: {
+                say: function(n, o) {
+                    alert('父组件新旧值' + n + '-' + o)
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>

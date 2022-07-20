@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My first Webpack app.</title>
+    <style>
+      body,
+      main::before {
+        background: url("./images/14.png") 0 / cover fixed;
+      }
+      main {
+        position: relative;
+        width: 600px;
+        height: 60vh;
+        margin: auto;
+        margin-top:30vh;
+        border-radius: 20px;
+        background: hsla(0, 0%, 100%, 0.3);
+        overflow: auto;
+      }
+      main::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* background: rgba(255,0,0,.5);  */ /*测试样式*/
+        z-index: -1;
+        filter: blur(20px);
+      }
+
+      dt,
+      dd {
+        display: inline;
+      }
+      dd {
+        margin: 0;
+        font-weight: bold;
+      }
+      dd + dt::before {
+        content: "\A";
+        white-space: pre;
+      }
+      dd + dd::before {
+        content: ", ";
+        margin-left: -0.25em;
+        font-weight: normal;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <main id="app">
+      <blockquote>
+        <ul>
+          <li v-for="(item,index) of file_list" :key="index">
+            <a :href="'./'+item+'.html'">{{item}}</a>
+          </li>
+        </ul>
+        <footer>
+          －
+          <cite> Oscar Wilde, The Picture of Dorian Gray </cite>
+        </footer>
+
+        <dl>
+          <dt>Name:</dt>
+          <dd>Lea Verou</dd>
+          <dt>Email:</dt>
+          <dd>lea@verou.me</dd>
+          <dd>lea222@verou.me</dd>
+          <dt>Location:</dt>
+          <dd>Earth</dd>
+        </dl>
+      </blockquote>
+    </main>
+    <!-- <script src="./dist/bundle.js"></script> -->
+    <script>
+      const App = {
+        data() {
+          return {
+            file_list: [
+              "Angle",
+              "blink",
+              "bounce",
+              "elastic",
+              "frame-by-frame",
+              "grid",
+              "layer",
+              "page",
+              "pan",
+              "resize",
+              "symc&v-model",
+              "testJS",
+              "testWater",
+              "text",
+              // "",
+              // "",
+            ],
+          };
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
