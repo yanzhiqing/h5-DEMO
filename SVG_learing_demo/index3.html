@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.17sucai.com/preview/1/2015-12-10/%E6%B5%81%E7%A8%8B%E5%9B%BE/index.html -->
+<html lang="zh">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态demo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app" class="demo">
+      <div>
+        <svg
+          :width="height*data_list.length"
+          :height="height"
+          style="border: 1px solid black"
+          :style="{'background':background}"
+        >
+          <defs>
+            <path
+              v-for="(item,index) of data_list"
+              :key="index+'path'"
+              :id="'path_'+index"
+              :d="getpath(index)"
+              fill="transparent"
+            ></path>
+            <linearGradient id="path_1-linear">
+              <stop offset="0%" stop-color="#fff" stop-opacity="0" />
+              <stop offset="100%" stop-color="#fff" stop-opacity="1" />
+            </linearGradient>
+            <mask
+              v-for="(item,index) of data_list"
+              :key="index+'mark'"
+              :id="'path_'+index+'-mask'"
+            >
+              <circle cx="0" cy="0" :r="height*0.1" fill="url(#path_1-linear)">
+                <animateMotion
+                  dur="3s"
+                  :path="getpath(index)"
+                  rotate="auto"
+                  repeatCount="indefinite"
+                ></animateMotion>
+              </circle>
+            </mask>
+          </defs>
+          <use
+            v-for="(item,index) of data_list"
+            :key="index+'line'"
+            stroke-width="1"
+            :xlink:href="'#path_'+index"
+            stroke="#235fa7"
+          ></use>
+          <use
+            v-for="(item,index) of data_list"
+            :key="index+'animate_line'"
+            stroke-width="3"
+            :xlink:href="'#path_'+index"
+            :mask="`url(#path_${index}-mask)`"
+            stroke="#4fd2dd"
+          >
+            <animate
+              attributeName="stroke-dasharray"
+              from="0, 1830"
+              to="1830, 0"
+              dur="3s"
+              repeatCount="indefinite"
+            ></animate>
+          </use>
+          <!-- 圆弧背面 -->
+          <path
+              v-for="(item,index) of data_list"
+              :key="index+'dash1'"
+              :id="'path_'+index"
+              :d="getDashPath(index,1)"
+              fill="transparent"
+              :stroke-dasharray="`${height*0.025} ${height*0.025}`"
+              stroke="rgba(255,255,255,0.6)" fill="none"
+            ></path>
+          <!-- 文字外层圆环 -->
+          <circle
+            v-for="(item,index) of data_list"
+            :key="index+'circle'"
+            :cx="height*(index+0.5)"
+            :cy="height*0.5"
+            :r="height*0.25"
+            :stroke-width="height*0.05"
+            stroke="rgba(255,255,255,0.2)"
+            :fill="background"
+          ></circle>
+          <!-- 文字 -->
+          <text  v-for="(item,index) of data_list"
+          :key="index+'text1'" :x="height*(index+0.5)-height*0.08" :y="height*0.5-height*0.02" 
+          :font-size="height*0.075" fill="rgba(255,255,255,1)">{{item.name.slice(0,2)}}</text>
+          <text  v-for="(item,index) of data_list"
+          :key="index+'text2'" :x="height*(index+0.5)-height*0.08" :y="height*0.5+height*0.07" 
+          :font-size="height*0.075" fill="rgba(255,255,255,1)">{{item.name.slice(2,4)}}</text>
+            <!-- 圆弧前面 -->
+          <path
+          v-for="(item,index) of data_list"
+          :key="index+'dash1'"
+          :id="'path_'+index"
+          :d="getDashPath(index,0)"
+          fill="transparent"
+          :stroke-dasharray="`${height*0.025} ${height*0.025}`"
+          stroke="rgba(255,255,255,0.6)" fill="none"
+        ></path>
+        </svg>
+      </div>
+    </div>
+    <script>
+      const App = {
+        data() {
+          return {
+            background: "#022997",
+            height: 200,
+            path_1_d: "",
+            data_list: [
+              {
+                id: "1",
+                name: "运维检测",
+              },
+              {
+                id: "2",
+                name: "故障排查",
+              },
+              {
+                id: "3",
+                name: "故障确认",
+              },
+              {
+                id: "4",
+                name: "故障处理",
+              },
+              {
+                id: "5",
+                name: "故障维修",
+              },
+              {
+                id: "6",
+                name: "运行检测",
+              },
+            ],
+          };
+        },
+        created() {
+          this.initData();
+        },
+        methods: {
+          initData() {
+            path_1_d = "";
+          },
+          getpath(index) {
+            let path = "";
+            if (index > 0) {
+              path = `M${this.height * (index - 0.5)},${this.height * 0.5} A${
+                this.height * 0.5
+              },${this.height * 0.5} 0 0,${index % 2 == 1 ? "1" : "0"} ${
+                this.height * (index + 0.5)
+              },${this.height * 0.5}`;
+            }
+            return path;
+          },
+          getDashPath(index,type) {
+            let path = "";
+              path = `M${this.height * (index + 0.5-0.35)},${this.height * 0.5} A${ this.height * 0.3 },${this.height * 0.08} 0 0,${type === 1 ? "1" : "0"} ${ this.height * (index + 0.5+0.35)},${this.height * 0.5}`;
+            return path;
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
