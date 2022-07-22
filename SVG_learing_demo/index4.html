@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.17sucai.com/preview/1/2015-12-10/%E6%B5%81%E7%A8%8B%E5%9B%BE/index.html -->
+<html lang="zh">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态demo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./index4.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="total">
+        <div class="cicle-box">
+          <div class="cicle8">
+              <span>89%</span>
+              <p>同比</p>
+            </div>
+            <div class="cicle9">
+              <span>89%</span>
+              <p>完成率</p>
+            </div>
+            <div class="cicle10">
+              <span>89%</span>
+              <p>售罄率</p>
+            </div>
+            <div class="cicle11">
+              <span>89%</span>
+              <p>折扣率</p>
+            </div>
+        </div>
+        <div class="bottom-box">
+          <div class="cicle3" ></div>
+        </div>
+      </div>
+
+      <div>
+        <div id="page1"  style="z-index:1;background: #000;">
+          <div class="imgGroug">
+            <ul>
+              <img alt="" class="img0 png" src="../登录页3d旋转/img/page1_0.png">
+              <img alt="" class="img1 png" src="../登录页3d旋转/img/page1_1.png">
+              <img alt="" class="img2 png" src="../登录页3d旋转/img/page1_2.png">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const App = {
+        data() {
+          return {
+            background: "#022997",
+            height: 200,
+            path_1_d: "",
+            data_list: [
+              {
+                id: "1",
+                name: "同比",
+                value:"89%"
+              },
+              {
+                id: "2",
+                name: "完成率",
+                value:"89%"
+              },
+              {
+                id: "3",
+                name: "售罄率",
+                value:"89%"
+              },
+              {
+                id: "4",
+                name: "折扣率",
+                value:"89%"
+              },
+            ],
+          };
+        },
+        created() {},
+        methods: {},
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
