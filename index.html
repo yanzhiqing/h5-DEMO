@@ -20,18 +20,21 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app" class="demo">
-      <ul>
+    <div id="app" class="demo" style="height:96vh;display: flex;">
+      <ul style="height:100%;overflow: auto;">
         <li v-for="(item,index) of file_list" :key="index">
-          <a :href="'./'+item">{{item}}</a>
+          <!-- <a :href="'./'+item">{{item}}</a> -->
+          <span @click="url='./'+item" style="cursor: pointer;" :style="{'color':'./'+item==url ? '#f00' : ''}">{{item}}</span>
         </li>
       </ul>
+      <iframe :src="url" style="flex:1;height: 100%;overflow: hidden;" border="0"></iframe>
     </div>
 
     <script>
       const App = {
         data() {
           return {
+            url:"",
             message: "Hello Vue!!",
             file_list: [
               '3D frozen snowflakes',

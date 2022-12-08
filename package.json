@@ -1,0 +1,23 @@
+{
+  "name": "h5-demo",
+  "version": "1.0.0",
+  "description": "h5 demo",
+  "main": "n",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanzhiqing/h5-DEMO.git"
+  },
+  "keywords": [
+    "h5",
+    "demo"
+  ],
+  "author": "yanzhiqing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanzhiqing/h5-DEMO/issues"
+  },
+  "homepage": "https://github.com/yanzhiqing/h5-DEMO#readme"
+}
