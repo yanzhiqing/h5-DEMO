@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG学习demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    //好的，下面是一个简单的JavaScript贪吃蛇游戏实现示例：
+    // 定义一些常量
+    const canvasWidth = 400;
+    const canvasHeight = 400;
+    const blockSize = 10;
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 初始化贪吃蛇数据
+    let snake = {
+      direction: "right",
+      body: [
+        { x: 5, y: 10 },
+        { x: 4, y: 10 },
+        { x: 3, y: 10 },
+      ],
+    };
+
+    // 初始化食物数据
+    let food = {
+      x: Math.floor(Math.random() * (canvasWidth / blockSize)),
+      y: Math.floor(Math.random() * (canvasHeight / blockSize)),
+    };
+
+    // 绘制块
+    function drawBlock(x, y) {
+      ctx.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
+    }
+
+    // 绘制贪吃蛇
+    function drawSnake() {
+      ctx.fillStyle = "#00FF00";
+      for (let i = 0; i < snake.body.length; i++) {
+        drawBlock(snake.body[i].x, snake.body[i].y);
+      }
+    }
+
+    // 绘制食物
+    function drawFood() {
+      ctx.fillStyle = "#FF0000";
+      drawBlock(food.x, food.y);
+    }
+
+    // 运行游戏
+    function gameLoop() {
+      // 清空画布
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+      // 移动贪吃蛇，从尾巴开始，每个块向前移动一个位置
+      for (let i = snake.body.length - 1; i > 0; i--) {
+        snake.body[i].x = snake.body[i - 1].x;
+        snake.body[i].y = snake.body[i - 1].y;
+      }
+
+      // 根据当前方向，更新贪吃蛇头部坐标
+      switch (snake.direction) {
+        case "up":
+          snake.body[0].y--;
+          break;
+        case "down":
+          snake.body[0].y++;
+          break;
+        case "left":
+          snake.body[0].x--;
+          break;
+        case "right":
+          snake.body[0].x++;
+          break;
+      }
+
+      // 如果贪吃蛇头部坐标和食物坐标相同，添加一个新的块，并重新生成食物
+      if (snake.body[0].x === food.x && snake.body[0].y === food.y) {
+        snake.body.push({ x: 0, y: 0 });
+        food.x = Math.floor(Math.random() * (canvasWidth / blockSize));
+        food.y = Math.floor(Math.random() * (canvasHeight / blockSize));
+      }
+
+      // 绘制贪吃蛇和食物
+      drawSnake();
+      drawFood();
+
+      // 如果贪吃蛇碰到边界或自身，游戏结束
+      for (let i = 1; i < snake.body.length; i++) {
+        if (
+          (snake.body[0].x === snake.body[i].x &&
+            snake.body[0].y === snake.body[i].y) ||
+          snake.body[0].x < 0 ||
+          snake.body[0].x >= canvasWidth / blockSize ||
+          snake.body[0].y < 0 ||
+          snake.body[0].y >= canvasHeight / blockSize
+        ) {
+          clearInterval(intervalId);
+          alert("Game Over!");
+          return;
+        }
+      }
+    }
+
+    // 将canvas添加到网页中
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+    document.body.appendChild(canvas);
+
+    // 监听用户按键事件，更新贪吃蛇方向
+    document.addEventListener("keydown", (event) => {
+      switch (event.keyCode) {
+        case 37: // 左
+          if (snake.direction !== "right") {
+            snake.direction = "left";
+          }
+          break;
+        case 38: // 上
+          if (snake.direction !== "down") {
+            snake.direction = "up";
+          }
+          break;
+        case 39: // 右
+          if (snake.direction !== "left") {
+            snake.direction = "right";
+          }
+          break;
+        case 40: // 下
+          if (snake.direction !== "up") {
+            snake.direction = "down";
+          }
+          break;
+      }
+    });
+
+    // 开始游戏循环
+    const intervalId = setInterval(gameLoop, 100);
+
+    //这段代码会在网页中创建一个400*400的canvas元素，并实现基本的贪吃蛇游戏逻辑。用户可以通过方向键控制贪吃蛇的移动方向，当贪吃蛇头部碰到边界或自身时游戏结束。
+  </script>
+</html>
