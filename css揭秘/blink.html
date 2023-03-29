@@ -6,9 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    @keyframes cursorBlink{
+      0%{
+        border-right-color:initial;
+      }
+      to{
+        border-right-color:transparent;
+      }
+    }
+    .text2{
+      border-right:12px solid;white-space: pre-wrap;background-color:rgba(255,255,255,.2);line-height: 1.4;
+      animation: cursorBlink .6s ease-in-out infinite alternate;
+    }
+  </style>
 </head>
 
 <body>
+  
+
+ 
   <style>
     @keyframes blink-1 {
       10% {
@@ -88,6 +106,47 @@
   <h1>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique necessitatibus nihil, fugit reprehenderit sequi est nesciunt adipisci, alias cupiditate aspernatur labore asperiores nostrum animi voluptates enim. Nemo quae natus aliquid.
   </h1>
+  
+<div id="app">
+  <div style="width:650px;background-color: #000;color: #fff;padding: 20px;min-height: 50px;" >
+    <span class="text2">{{dynamic_str}}</span>
+  </div>
+</div>
+<script>
+  const App = {
+    data() {
+      return {
+        text_str:`Here is a list of their availability:
+        - Andrew: 11 am to 3 pm
+        - Joanne: noon to 2 pm, and 3:30 pm to 5 pm
+        - Hannah: noon to 12:30 pm, and 4 pm to 6 pm
+
+        Based on their availability, there is a 30-minute window where all three of them are available, which is from 4 pm to 4:30 pm. So, the meeting can be scheduled at 4 pm.`,
+        dynamic_str:""
+      };
+    },
+    created(){
+      this.handleStr()
+    },
+    methods:{
+      async handleStr(){
+        let timer;
+        let text_arr=this.text_str.split("")
+        let len=text_arr.length;
+        let n=0
+        timer=setInterval(()=>{
+          this.dynamic_str=this.dynamic_str + text_arr[n]
+          if(n>=len-1){
+            clearInterval(timer)
+          }else{
+            n++
+          }
+        },60)
+      },
+    }
+  };
+  Vue.createApp(App).mount("#app");
+</script>
 </body>
 
 </html>
