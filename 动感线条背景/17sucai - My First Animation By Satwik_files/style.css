@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: hsla(220deg, 35%, 10%, 1);
+  width: 100%;
+  height: 100%;
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  font-size: clamp(12px, 2vw, 26px);
+}
+
+h1 {
+  position: absolute;
+  font-family: 'Roboto';
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  color: hsla(320deg, 100%, 95%, 0.3);
+  font-size: 2em;
+  animation: breathe 20000ms alternate infinite ease-in-out;
+}
+h1 > .last {
+  letter-spacing: 0em;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    color: hsla(320deg, 100%, 95%, 0.3);
+  }
+  100% {
+    transform: scale(0.9);
+    color: hsla(320deg, 100%, 95%, 0.8);
+  }
+}
+
+canvas {
+  width: 100%;
+  height: 30em;
+  box-shadow: 0 1em 2em 0.5em hsla(210deg, 35%, 0%, 0.1)
+}
