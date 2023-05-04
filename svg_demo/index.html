@@ -80,18 +80,18 @@
     <h1>1-6-inline-svg</h1>
     <div>
       <style type="text/css">
-        circle {
-          fill: rgba(255, 0, 0, 1);
-        }
         .first {
           opacity: 0.5;
+          fill: rgba(255, 0, 0, 1);
         }
         .second {
           stroke-width: 3px;
           stroke: #000000;
+          fill: rgba(255, 0, 0, 1);
         }
         .third {
           fill: rgba(0, 255, 0, 0.75);
+          fill: rgba(255, 0, 0, 1);
         }
       </style>
       <svg
@@ -110,7 +110,7 @@
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" width="350" height="150" viewBox="0 0 350 150" version="1.1" style="border:1px solid black">
         <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,1)"/>
-        <rect x="200" y="25" width="100" height="100" fill="rga(0,0,255,1)"/>
+        <rect x="100" y="75" width="100" height="100" fill="rga(0,0,255,1)"/>
       </svg>
     </div>
     <h1>2-2-positioning-viewbox-scaled-up</h1>
@@ -118,7 +118,8 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="350" height="150" viewBox="0 0 350 150" version="1.1" style="border:1px solid black">
         <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,1)"/>
         <rect x="200" y="25" width="100" height="100" fill="rga(0,0,255,1)"/>
-      </svg><svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 0 350 150" version="1.1" style="border:1px solid black">
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" viewBox="0 0 350 150" version="1.1" style="border:1px solid black">
         <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,1)"/>
         <rect x="200" y="25" width="100" height="100" fill="rga(0,0,255,1)"/>
       </svg>
@@ -168,7 +169,18 @@
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" version="1.1">
         <path d="M100,100 L100,300 L150,300 L150,150 S250,150,175,200 L200,300 L250,300 L225,225 S350,100,100,100" stroke-width="1" stroke="#003366" fill="#cccccc"></path>
-        </svg>
+        <circle cx="100" cy="100" r="5" fill="#f00"></circle>  
+        <circle cx="100" cy="300" r="5" fill="#f00"></circle>  
+        <circle cx="150" cy="300" r="5" fill="#f00"></circle>  
+        <circle cx="150" cy="150" r="5" fill="#f00"></circle>  
+        <circle cx="250" cy="150" r="5" fill="#f0f"></circle>  
+        <circle cx="175" cy="200" r="5" fill="#f00"></circle>  
+        <circle cx="200" cy="300" r="5" fill="#f00"></circle>  
+        <circle cx="250" cy="300" r="5" fill="#f00"></circle>  
+        <circle cx="225" cy="225" r="5" fill="#f00"></circle>  
+        <circle cx="350" cy="100" r="5" fill="#f0f"></circle>  
+        <circle cx="100" cy="100" r="5" fill="#f00"></circle>  
+      </svg>
     </div>
     <h1>2-6-ellipse</h1>
     <svg width="250" height="100" viewBox="0 0 250 125"
@@ -179,6 +191,16 @@
       <div>
         <svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
             <polygon points="95 95 120 5 150 95 235 95 165 150 195 235 120 180 50 235 75 150 5 95" fill="rgba(0,0,255,.5)"></polygon>
+            <circle cx="95" cy="95" r="5" fill="#f00"></circle>  
+            <circle cx="120" cy="5" r="5" fill="#f00"></circle>  
+            <circle cx="150" cy="95" r="5" fill="#f00"></circle>  
+            <circle cx="235" cy="95" r="5" fill="#f00"></circle>  
+            <circle cx="165" cy="150" r="5" fill="#f00"></circle>  
+            <circle cx="195" cy="235" r="5" fill="#f00"></circle>  
+            <circle cx="120" cy="180" r="5" fill="#f00"></circle>  
+            <circle cx="50" cy="235" r="5" fill="#f00"></circle>  
+            <circle cx="75" cy="150" r="5" fill="#f00"></circle>  
+            <circle cx="5" cy="95" r="5" fill="#f00"></circle>  
         </svg>
       </div>
       <h1>2-7-polygon</h1>
@@ -191,6 +213,9 @@
       <div>
         <svg width="800" height="600" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="background: #000 url(./assest/svg-logo-h.svg);">
           <polyline points="360,60 330,90 295,160 230,220 190,217 175,180 155,130 155,60 135,30 100,25 90,55 65,170 80,195 65,220 35,210 65,170" fill="none" stroke="white" stroke-width="3"></polyline>
+          <circle cx="360" cy="60" r="5" fill="#f00"></circle>  
+          <circle cx="330" cy="90" r="5" fill="#f00"></circle>  
+          <circle cx="65" cy="170" r="5" fill="#f00"></circle>  
       </svg>
       </div>
       <h1>2-9-stroke-dasharray</h1>
@@ -273,7 +298,9 @@
           <rect x="50" y="20" width="100" height="100" fill="url(#radial)"
           ></rect>
           <rect x="200" y="20" width="100" height="100" fill="url(#linear)"></rect>
-      </svg>
+          <rect x="0" y="150" width="400" height="20" fill="url(#linear)"></rect>
+          <polygon points="0,200 50,200 70,220 150,250 160,300" fill="url(#linear)"></polygon>
+        </svg>
       </div>
       <h1>2-15-pattern</h1>
       <div>
@@ -281,7 +308,8 @@
           <pattern id="pattern-example" width="100" height="100" patternUnits="userSpaceOnUse">
               <polygon points="0,50 0,100 50,50 100,100 100,75 50,25 0,75" fill="#000000"></polygon>
           </pattern>
-          <rect x="0" y="0" width="400" height="400" fill="url(#pattern-example)"></rect>
+          <rect x="0" y="0" width="400" height="300" fill="url(#pattern-example)"></rect>
+          <polygon points="0,50 0,100 50,50 100,100 100,75 50,25 0,75" fill="#f00"></polygon>
       </svg>
       </div>
       <h1>x-y-viewbox-preserveAspectRatio</h1>
@@ -307,8 +335,8 @@
       <div>
         <svg class="svg-border" xmlns="http://www.w3.org/2000/svg" width="350" height="150" viewBox="0 0 350 150" version="1.1">
           <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,.5)"/>
-          <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,.5)" transform="translate(10)" /> 
-          <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,.5)" transform="translate(75,0)" />
+          <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,.5)" transform="translate(40)" /> 
+          <circle cx="100" cy="75" r="50" fill="rgba(255,0,0,.5)" transform="translate(75,20)" />
         </svg>
       </div>
       <h1>3-2-scale</h1>
@@ -370,6 +398,27 @@
         </svg>
       </div>
       <h1>3-8-skew</h1>
+      <style>
+        .skew-div{
+          width: max-content;
+          position: relative;
+          padding: 0 40px;
+        }
+        .skew-div::before{
+          content: "";
+          display: block;
+          position: absolute;
+          left: 20px;
+          right:20px ;
+          height: 100%;
+          background-color: lightgreen;
+          z-index: -1;
+          transform: skewX(-40deg);
+        }
+      </style>
+      <div class="skew-div">
+        <h1>我是css skew</h1>
+      </div>
       <div>
         <svg class="svg-border" xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0  500 500" version="1.1">
           <rect x="100" y="100" width="100" height="100" fill="rgba(255,0,0,.1)" transform="skewX(10)"/>
