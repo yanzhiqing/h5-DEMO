@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>渐变调色板</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+          function $$(id) {
+              return document.getElementById(id);
+          }
+          window.onload = function () {
+              var cnv = $$("canvas");
+              var cxt = cnv.getContext("2d");
+              
+              var r = 255, g = 0, b = 0;
+              for (i = 0; i < 150; i++) {
+                    if (i < 25) {
+                          g += 10;
+                    } else if (i > 25 && i < 50) {
+                          r -= 10;
+                    } else if (i > 50 && i < 75) {
+                          g -= 10;
+                          b += 10;
+                    } else if (i >= 75 && i < 100) {
+                          r += 10;
+                    } else {
+                          b -= 10;
+                    }
+                    cxt.fillStyle = "rgb(" + r + ", " + g + ", " + b + ")";
+                    cxt.fillRect(3 * i, 0, 3, cnv.height);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="255" height="150" style="border:1px dashed
+gray; "></canvas>
+    </body>
+    </html>

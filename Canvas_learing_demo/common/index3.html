@@ -1,0 +1,28 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>方格调色板</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+          function $$(id) {
+              return document.getElementById(id);
+          }
+          window.onload = function () {
+              var cnv = $$("canvas");
+              var cxt = cnv.getContext("2d");
+              
+              for (var i = 0; i < 6; i++) {
+                    for (var j = 0; j < 6; j++) {
+                          cxt.fillStyle = "rgb(" + Math.floor(255-42.5 *
+i) + ", " + Math.floor(255-42.5 * j) + ",0)";
+                          cxt.fillRect(j * 25, i * 25, 25, 25);
+                    }
+              }
+          }
+    </script>
+</head>
+<body>
+      <canvas id="canvas" width="200" height="200" style="border:1px dashed
+gray; "></canvas>
+</body>
+</html>

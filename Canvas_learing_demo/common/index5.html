@@ -1,0 +1,53 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>圆角矩形</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      function $$(id) {
+        return document.getElementById(id);
+      }
+      window.onload = function () {
+        var cnv = $$("canvas");
+        var cxt = cnv.getContext("2d");
+
+        createRoundedRect(cxt, 100, 100, 20, 40, 20);
+        cxt.fillStyle = "HotPink";
+        cxt.fill();
+      };
+      /*
+       * createRoundedRect()用于绘制圆角矩形
+       * width、height：分别表示长和宽
+       * r：表示圆角半径
+       * offsetX、offsetY：分别表示左上角顶点坐标
+       */
+      function createRoundedRect(cxt, width, height, r, offsetX, offsetY) {
+        cxt.beginPath();
+        cxt.moveTo(offsetX + r, offsetY);
+        cxt.lineTo(offsetX + width - r, offsetY);
+        cxt.arcTo(offsetX + width, offsetY, offsetX + width, offsetY + r, r);
+        cxt.lineTo(offsetX + width, offsetY + height - r);
+        cxt.arcTo(
+          offsetX + width,
+          offsetY + height,
+          offsetX + width - r,
+          offsetY + height,
+          r
+        );
+        cxt.lineTo(offsetX + r, offsetY + height);
+        cxt.arcTo(offsetX, offsetY + height, offsetX, offsetY + height - r, r);
+        cxt.lineTo(offsetX, offsetY + r);
+        cxt.arcTo(offsetX, offsetY, offsetX + r, offsetY, r);
+        cxt.closePath();
+      }
+    </script>
+  </head>
+  <body>
+    <canvas
+      id="canvas"
+      width="200"
+      height="150"
+      style="border: 1px dashed gray"
+    ></canvas>
+  </body>
+</html>

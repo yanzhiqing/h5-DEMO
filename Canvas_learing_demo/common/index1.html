@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>多边形绘制</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        function $$(id) {
+            return document.getElementById(id);
+        }
+        window.onload = function () {
+            var cnv = $$("canvas");
+            var cxt = cnv.getContext("2d");
+            //调用自定义的方法createPolygon()
+            createPolygon(cxt, 3, 100, 75, 50);
+            cxt.fillStyle = "HotPink";
+            cxt.fill();
+      }
+      /*
+        * n：表示n边形
+        * dx、dy：表示n边形中心坐标
+        * size：表示n边形的大小
+        */
+      function createPolygon(cxt, n, dx, dy, size) {
+          cxt.beginPath();
+          var degree = (2 * Math.PI )/ n;
+          for (var i = 0; i < n; i++) {
+              var x = Math.cos(i * degree);
+              var y = Math.sin(i * degree);
+              cxt.lineTo(x * size + dx, y * size + dy);
+        }
+        cxt.closePath();
+    }
+</script>
+</head>
+<body>
+<canvas id="canvas" width="200" height="150" style="border:1px dashed
+gray; "></canvas>
+</body>
+</html>
