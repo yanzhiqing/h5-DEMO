@@ -2562,7 +2562,7 @@ supportWebGL ? (tryPgvSendClick(ismobile ? {
 	hottag: "a20170301pre.support.mobilewebglyes"
 }: {
 	hottag: "a20170301pre.support.pcwebglyes"
-}), $.getScript("//game.gtimg.cn/images/up/act/a20170301pre/js/pkg/webgl_ea9cb39.js",
+}), $.getScript("./webgl_ea9cb39.js",
 function() {}), $("body").addClass("webglyes")) : (tryPgvSendClick(ismobile ? {
 	hottag: "a20170301pre.support.mobilewebglno"
 }: {
