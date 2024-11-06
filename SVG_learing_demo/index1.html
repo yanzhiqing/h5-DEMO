@@ -12,10 +12,7 @@
   </head>
   <body style="padding: 40px">
     <h1>动态svg二</h1>
-    <svg
-      width="100"
-      height="100"
-    >
+    <svg width="100" height="100">
       <defs>
         <linearGradient id="border-box-1-linear" gradientTransform="rotate(70)">
           <stop offset="0%" stop-color="#FFD03B" stop-opacity="0" />
@@ -54,6 +51,68 @@
         fill="transparent"
       ></circle>
       <path d="M 50 20 L 45,25 L 55,25 Z" fill="#FF4738"></path>
+    </svg>
+    <h1>动态svg三</h1>
+    <svg
+      width="300"
+      height="300"
+      style="
+        background-color: rgba(0, 0, 0.4);
+        transform: scale(2);
+        margin-left: 200px;
+      "
+    >
+      <defs>
+        <radialGradient
+          id="gradient-1"
+          cx="0"
+          cy="0"
+          r="100%"
+          fx="50%"
+          fy="50%"
+        >
+          <stop
+            offset="0%"
+            style="stop-color: rgba(255, 150, 75, 0); stop-opacity: 1"
+          />
+          <stop
+            offset="100%"
+            style="stop-color: rgba(255, 150, 75, 1); stop-opacity: 1"
+          />
+        </radialGradient>
+      </defs>
+      <rect
+        x="5"
+        y="5"
+        rx="8"
+        ry="8"
+        width="290"
+        height="290"
+        stroke-width="1"
+        stroke="url(#gradient-1)"
+        fill="transparent"
+      />
+    </svg>
+    <svg
+      width="300"
+      height="300"
+      style="
+        background-color: rgba(0, 0, 0.4);
+        transform: scale(1);
+        margin-left: 200px;
+      "
+    >
+      <rect
+        x="5"
+        y="5"
+        rx="8"
+        ry="8"
+        width="290"
+        height="290"
+        stroke-width="1"
+        stroke="url(#border-box-1-linear)"
+        fill="transparent"
+      />
     </svg>
   </body>
 </html>

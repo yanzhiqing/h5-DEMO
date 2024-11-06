@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/tools.js"></script>
+    <script src="js/ball.js"></script>
+    <script type="text/javascript">
+          function $$(id) {
+                return document.getElementById(id);
+          }
+          window.onload = function () {
+                var cnv = $$("canvas");
+                var cxt = cnv.getContext("2d");
+                
+                var ball = new Ball(0, cnv.height / 2);
+                //定义终点的x轴坐标
+                var targetX = cnv.width * (3 / 4);
+                //定义缓动系数
+                var easing = 0.05;
+                
+                (function frame() {
+                      window.requestAnimationFrame(frame);
+                      cxt.clearRect(0, 0, cnv.width, cnv.height);
+                      
+                      var vx = (targetX - ball.x) * easing;
+                      ball.x += vx;
+                      
+                      ball.fill(cxt);
+                })();
+          }
+      </script>
+</head>
+<body>
+      <canvas id="canvas" width="200" height="150" style="border:1px solid
+silver; "></canvas>
+</body>
+</html>
